@@ -3,14 +3,24 @@
   "version" : "0.1",
   "description" : "Simple example of how to do OAuth in an extension",
   "permissions": [
-
+    "tabs",
+    "http://www.google.com/m8/feeds/*",
+    "https://www.google.com/accounts/OAuthGetRequestToken",
+    "https://www.google.com/accounts/OAuthAuthorizeToken",
+    "https://www.google.com/accounts/OAuthGetAccessToken"
   ],
   "background": {
-    "page": "background.html"
+    "scripts": [
+      "chrome_ex_oauthsimple.js",
+      "chrome_ex_oauth.js",
+      "background.js"
+    ]
   },
   "browser_action": {
-     "default_icon": "icon.png",
-     "default_popup": "popup.html"
+     "default_icon": "icon.png"
   },
+  "web_accessible_resources": [
+    "chrome_ex_oauth.html"
+  ],
   "manifest_version": 2
 }
